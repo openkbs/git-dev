@@ -1,9 +1,10 @@
 #
 # Dockerizing Neo4j graph database (http://www.github.com/kbastani/docker-neo4j)
 #
-#FROM       java:openjdk-8-jdk
+
 FROM	local/c7-hdpclient
-MAINTAINER RSheu
+
+MAINTAINER "DrSnowbird" <DrSnowbird@openkbs.org>
 
 #### ---- HDFS ----
 ENV HDFS_HOST hdfs://hdfs:9000
