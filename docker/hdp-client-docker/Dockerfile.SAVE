@@ -1,0 +1,80 @@
+FROM local/c7-java8
+
+VOLUME /usr/hdp/2.4.0.0-169
+VOLUME /usr/hdp/current
+VOLUME /etc/hadoop
+VOLUME /usr/hdp/bin
+
+RUN ln -s /usr/hdp/current/accumulo-client/bin/accumulo /usr/bin/accumulo
+RUN ln -s /usr/hdp/current/atlas-server/bin/metadata-start.sh /usr/bin/atlas-start
+RUN ln -s /usr/hdp/current/atlas-server/bin/metadata-stop.sh /usr/bin/atlas-stop
+RUN ln -s /usr/hdp/current/falcon-client/bin/falcon /usr/bin/falcon
+RUN ln -s /usr/hdp/current/flume-server/bin/flume-ng /usr/bin/flume-ng
+RUN ln -s /usr/hdp/current/hadoop-client/bin/hadoop /usr/bin/hadoop
+RUN ln -s /usr/hdp/current/hbase-client/bin/hbase /usr/bin/hbase
+RUN ln -s /usr/hdp/current/hive-client/../hive-hcatalog/bin/hcat /usr/bin/hcat
+RUN ln -s /usr/hdp/current/hadoop-hdfs-client/bin/hdfs /usr/bin/hdfs
+RUN ln -s /usr/hdp/current/hive-client/bin/hive /usr/bin/hive
+RUN ln -s /usr/hdp/current/hive-server2/bin/hiveserver2 /usr/bin/hiveserver2
+RUN ln -s /usr/hdp/current/kafka-broker/bin/kafka /usr/bin/kafka
+RUN ln -s /usr/hdp/current/hadoop-mapreduce-client/bin/mapred /usr/bin/mapred
+RUN ln -s /usr/hdp/current/oozie-client/bin/oozie /usr/bin/oozie
+RUN ln -s /usr/hdp/current/oozie-server/bin/oozied.sh /usr/bin/oozied.sh
+RUN ln -s /usr/hdp/current/phoenix-client/bin/psql.py /usr/bin/phoenix-psql
+RUN ln -s /usr/hdp/current/phoenix-server/bin/queryserver.py /usr/bin/phoenix-queryserver
+RUN ln -s /usr/hdp/current/phoenix-client/bin/sqlline.py /usr/bin/phoenix-sqlline
+RUN ln -s /usr/hdp/current/phoenix-client/bin/sqlline-thin.py /usr/bin/phoenix-sqlline-thin
+RUN ln -s /usr/hdp/current/pig-client/bin/pig /usr/bin/pig
+RUN ln -s /usr/hdp/current/ranger-admin/ews/ranger-admin-start /usr/bin/ranger-admin-start
+RUN ln -s /usr/hdp/current/ranger-admin/ews/ranger-admin-stop /usr/bin/ranger-admin-stop
+RUN ln -s /usr/hdp/current/ranger-kms/ranger-kms /usr/bin/ranger-kms
+RUN ln -s /usr/hdp/current/ranger-usersync/ranger-usersync-start /usr/bin/ranger-usersync-start
+RUN ln -s /usr/hdp/current/ranger-usersync/ranger-usersync-stop /usr/bin/ranger-usersync-stop
+RUN ln -s /usr/hdp/current/slider-client/bin/slider /usr/bin/slider
+RUN ln -s /usr/hdp/current/spark-client/bin/spark-class /usr/bin/spark-class
+RUN ln -s /usr/hdp/current/spark-client/bin/spark-shell /usr/bin/spark-shell
+RUN ln -s /usr/hdp/current/spark-client/bin/spark-sql /usr/bin/spark-sql
+RUN ln -s /usr/hdp/current/spark-client/bin/spark-submit /usr/bin/spark-submit
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop /usr/bin/sqoop
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-codegen /usr/bin/sqoop-codegen
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-create-hive-table /usr/bin/sqoop-create-hive-table
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-eval /usr/bin/sqoop-eval
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-export /usr/bin/sqoop-export
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-help /usr/bin/sqoop-help
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-import /usr/bin/sqoop-import
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-import-all-tables /usr/bin/sqoop-import-all-tables
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-job /usr/bin/sqoop-job
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-list-databases /usr/bin/sqoop-list-databases
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-list-tables /usr/bin/sqoop-list-tables
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-merge /usr/bin/sqoop-merge
+RUN ln -s /usr/hdp/current/sqoop-server/bin/sqoop-metastore /usr/bin/sqoop-metastore
+RUN ln -s /usr/hdp/current/sqoop-client/bin/sqoop-version /usr/bin/sqoop-version
+RUN ln -s /usr/hdp/current/storm-client/bin/storm /usr/bin/storm
+RUN ln -s /usr/hdp/current/storm-slider-client/bin/storm-slider /usr/bin/storm-slider
+RUN ln -s /usr/hdp/current/storm-client/bin/worker-launcher /usr/bin/worker-lanucher
+RUN ln -s /usr/hdp/current/hadoop-yarn-client/bin/yarn /usr/bin/yarn
+RUN ln -s /usr/hdp/current/zookeeper-client/bin/zookeeper-client /usr/bin/zookeeper-client
+RUN ln -s /usr/hdp/current/zookeeper-server/bin/zookeeper-server /usr/bin/zookeeper-server
+RUN ln -s /usr/hdp/current/zookeeper-server/bin/zookeeper-server-cleanup /usr/bin/zookeeper-server-cleanup
+
+#### Copy hdp-select from /usr/bin
+#COPY /usr/bin/hdp-select /usr/bin/
+#COPY hdp-select /usr/bin/
+
+#### ---- HDFS ----
+ENV HADOOP_CONF_DIR /etc/hadoop/conf 
+ENV HDFS_HOST hdfs://hdfs:9000
+ENV SPARK_HOME /usr/hdp/current/spark-client
+ENV PATH /usr/java/default/bin:/usr/java/default/bin:/usr/java/default/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/usr/hdp/bin
+ENV HDP_VERSION 2.4.0.0-169
+ENV JAVA_HOME /usr/java/default
+
+#### fake out /usr/jdk64/jdk1.8.0_60/bin/java
+RUN mkdir -p /usr/jdk64/jdk1.8.0_60/bin
+RUN ln -s /usr/java/default/bin/java /usr/jdk64/jdk1.8.0_60/bin/java
+
+#### Install needed shell commands:
+RUN yum install which -y
+
+ENTRYPOINT ["/bin/bash"]
+
