@@ -1,3 +1,6 @@
+
+#### ---- HDP Client Docker ----
+
 FROM local/c7-java8
 
 VOLUME /usr/hdp/2.4.0.0-169
