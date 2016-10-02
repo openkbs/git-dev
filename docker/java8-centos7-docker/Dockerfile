@@ -2,9 +2,8 @@
 #
 # VERSION       Java 8
 
-
 FROM local/c7-systemd
-MAINTAINER Ray Sheu
+MAINTAINER "DrSnowbird" <DrSnowbird@openkbs.org>
 
 #http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.rpm
 ENV JAVA_VERSION 8u102

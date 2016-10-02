@@ -1,6 +1,6 @@
 FROM centos
 
-MAINTAINER "Ray Sheu" 
+MAINTAINER "DrSnowbird" <DrSnowbird@openkbs.org>
 
 ENV container docker
 
