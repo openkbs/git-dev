@@ -1,6 +1,7 @@
 # git-dev
 
 ## Docker projects
+```
 .
 ├── docker
 │   ├── centos7-docker
@@ -35,5 +36,4 @@
 │           └── bootstrap.sh
 ├── LICENSE
 └── README.md
-
-9 directories, 24 files
+```
