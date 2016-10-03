@@ -1,6 +1,11 @@
 # git-dev
 
 ## Docker projects
+- centos7-docker
+- java8-centos7-docker
+- neo4j-docker
+- jdp-client-docker
+
 
 ```
 .
