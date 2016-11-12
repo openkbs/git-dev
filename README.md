@@ -1,4 +1,4 @@
-# git-dev
+# Dockers setup files: git-dev
 
 ## Docker projects
 - centos7-docker
