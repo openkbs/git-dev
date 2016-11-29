@@ -88,6 +88,7 @@ services:
       - ./hadoop.env
     ports:
       - "9000:9000"
+      - "4040:4040"
 
   hue:
     image: bde2020/hdfs-filebrowser:3.9
